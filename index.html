@@ -1,2 +1,171 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#9f2089"/><title>Meesho Sale — Shop online</title></head><body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body></html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#9f2089" />
+    <title>Meesho Sale — Shop online</title>
+    <meta
+      name="description"
+      content="Shop trending fashion, home, accessories and essentials with Meesho Sale deals."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="topline">Free shipping on orders above ₹499 • New drops every day</div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand-block">
+          <div class="brand-mark">M</div>
+          <div>
+            <div class="brand-name">Meesho</div>
+            <div class="brand-sub">Sale</div>
+          </div>
+        </div>
+
+        <label class="searchbar" aria-label="Search products">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search for products, styles, & categories" />
+        </label>
+
+        <div class="header-actions">
+          <button class="ghost-btn" type="button">Login</button>
+          <button class="cart-btn" type="button" id="cartToggle">
+            Cart
+            <span id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow">Biggest value festival</p>
+          <h1>Fresh finds for every mood and moment.</h1>
+          <p class="subtitle">
+            Explore trend-led fashion, essentials and home upgrades at prices that feel too good to miss.
+          </p>
+
+          <div class="cta-row">
+            <a href="#products" class="primary-btn">Shop collection</a>
+            <a href="#features" class="secondary-btn">Why Meesho</a>
+          </div>
+
+          <ul class="hero-stats">
+            <li><strong>20k+</strong><span>happy shoppers</span></li>
+            <li><strong>4.8/5</strong><span>average rating</span></li>
+            <li><strong>Same day</strong><span>dispatch</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-label="Featured products display">
+          <div class="promo-card promo-card-main">
+            <span class="pill">Trending now</span>
+            <img
+              src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80"
+              alt="Woman in colorful attire"
+            />
+            <div class="promo-meta">
+              <div>
+                <strong>Festive edit</strong>
+                <small>Upto 70% off</small>
+              </div>
+              <span>₹999</span>
+            </div>
+          </div>
+          <div class="mini-card card-top">
+            <span>New in</span>
+            <strong>Home décor</strong>
+          </div>
+          <div class="mini-card card-bottom">
+            <span>Best sellers</span>
+            <strong>Accessories</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="brands-strip container" aria-label="Partner brands">
+        <span>Pop culture</span>
+        <span>Style pick</span>
+        <span>Daily essentials</span>
+        <span>Home comfort</span>
+        <span>Beauty mood</span>
+      </section>
+
+      <section class="products-section container" id="products">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Curated picks</p>
+            <h2>Popular products</h2>
+          </div>
+          <div class="category-filter" id="categoryFilter" aria-label="Category filter">
+            <button class="chip active" type="button" data-category="All">All</button>
+            <button class="chip" type="button" data-category="Women">Women</button>
+            <button class="chip" type="button" data-category="Men">Men</button>
+            <button class="chip" type="button" data-category="Accessories">Accessories</button>
+            <button class="chip" type="button" data-category="Home">Home</button>
+            <button class="chip" type="button" data-category="Footwear">Footwear</button>
+          </div>
+        </div>
+
+        <div id="productGrid" class="product-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="features container" id="features">
+        <div class="feature-card">
+          <div class="icon">⚡</div>
+          <h3>Fast delivery</h3>
+          <p>Quick dispatch and live order tracking for every purchase.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">💬</div>
+          <h3>24/7 support</h3>
+          <p>Friendly help for sizing, shipping and your order questions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🛡️</div>
+          <h3>Easy returns</h3>
+          <p>Stress-free hassle-free returns on eligible products.</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-panel" id="cartPanel" aria-label="Shopping cart">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow small">Your cart</p>
+          <h3>Bag summary</h3>
+        </div>
+        <button type="button" class="close-cart" id="closeCart" aria-label="Close cart">✕</button>
+      </div>
+
+      <div id="cartItems" class="cart-items"></div>
+
+      <div class="cart-footer">
+        <div class="totals-row">
+          <span>Subtotal</span>
+          <strong id="cartSubtotal">₹0</strong>
+        </div>
+        <form id="checkoutForm" class="checkout-form">
+          <input type="text" name="customer" placeholder="Full name" required />
+          <input type="tel" name="phone" placeholder="Phone number" required />
+          <textarea name="address" rows="3" placeholder="Shipping address" required></textarea>
+          <button type="submit" class="primary-btn full-width">Place order</button>
+        </form>
+      </div>
+    </aside>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
